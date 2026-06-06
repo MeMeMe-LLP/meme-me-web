@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useRef, useState } from "react";
 
 /**
@@ -67,6 +68,9 @@ export default function Home() {
           <a href="#streamers" className="hidden sm:inline text-white/60 hover:text-white transition">
             For streamers
           </a>
+          <Link href="/setup" className="hidden sm:inline text-cyan-300 hover:text-cyan-200 transition">
+            Setup guide
+          </Link>
           <a
             href="#"
             onClick={(e) => comingSoon(e, "The Steam page")}
@@ -306,18 +310,26 @@ export default function Home() {
               ))}
             </ul>
 
-            <a
-              href="#"
-              onClick={(e) => comingSoon(e, "Twitch Connect")}
-              data-coming-soon="twitch"
-              title="Twitch integration coming soon"
-              className="mt-8 inline-block rounded-xl border-2 border-purple-300/60 bg-purple-600/40 px-6 py-3 font-bold transition hover:bg-purple-600/60 active:scale-95"
-            >
-              🔗 Connect Twitch{" "}
-              <span className="text-[10px] uppercase tracking-wider text-cyan-200">
-                soon
-              </span>
-            </a>
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <a
+                href="#"
+                onClick={(e) => comingSoon(e, "Twitch Connect")}
+                data-coming-soon="twitch"
+                title="Twitch integration coming soon"
+                className="inline-block rounded-xl border-2 border-purple-300/60 bg-purple-600/40 px-6 py-3 font-bold transition hover:bg-purple-600/60 active:scale-95"
+              >
+                🔗 Connect Twitch{" "}
+                <span className="text-[10px] uppercase tracking-wider text-cyan-200">
+                  soon
+                </span>
+              </a>
+              <Link
+                href="/setup"
+                className="font-semibold text-cyan-300 underline-offset-4 transition hover:text-cyan-200 hover:underline"
+              >
+                Streamer setup guide →
+              </Link>
+            </div>
           </div>
 
           {/* Bits stat card */}
